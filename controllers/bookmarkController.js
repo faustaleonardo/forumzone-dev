@@ -16,6 +16,11 @@ exports.hasPermission = hasPermission(Bookmark);
 
 exports.checkIfQuestionExist = checkIfDocExist(Question);
 
+exports.setUserId = (req, res, next) => {
+  req.body.user = req.user._id;
+  next();
+};
+
 exports.setUserQuestionId = catchAsync(async (req, res, next) => {
   if (!req.body.user) req.body.user = req.user._id;
   if (!req.body.question) req.body.question = req.params.questionId;

@@ -9,12 +9,14 @@ const {
   deleteBookmark,
   setUserQuestionId,
   hasPermission,
+  setUserId,
   checkIfQuestionExist
 } = require('./../controllers/bookmarkController');
 
 const { protect } = require('./../controllers/authController');
 
 router.use(protect);
+router.get('/me', protect, setUserId, getAllBookmarks);
 router
   .route('/')
   .get(getAllBookmarks)
