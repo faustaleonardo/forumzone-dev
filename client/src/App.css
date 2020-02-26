@@ -1,3 +1,40 @@
-body {
-  font-family: 'Roboto';
+:root {
+  --bg-grey-color: #f6f6f6;
+  --text-grey-color: #8795a1;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.mt-2 {
+  margin-top: 2rem;
+}
+
+.mt-1 {
+  margin-top: 1rem;
+}
+
+.text-grey-color {
+  color: var(--text-grey-color);
+}
+
+.bg-grey-color {
+  background-color: var(--bg-grey-color) !important;
+}
+
+.app-name {
+  font-size: 1.5rem;
+}
+
+.btn-new-discussion {
+  height: 43px;
+  line-height: 43px;
+}
+
+.filter-dropbox {
+  color: var(--text-grey-color);
+  background-color: var(--bg-grey-color);
+  display: inline-block;
+  width: auto;
 }

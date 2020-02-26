@@ -1,6 +1,12 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../actions';
+import Header from './Header';
+import Landing from './Landing';
+
+const Signup = () => <div>Signin page</div>;
+const Login = () => <div>Login page</div>;
 
 class App extends Component {
   componentDidMount() {
@@ -8,7 +14,18 @@ class App extends Component {
   }
 
   render() {
-    return <div>Hello World</div>;
+    return (
+      <div>
+        <Header />
+        <div className="container mt-2">
+          <BrowserRouter>
+            <Route exact path="/" component={Landing} />
+            <Route path="/login" component={Login} />
+            <Route path="/signup" component={Signup} />
+          </BrowserRouter>
+        </div>
+      </div>
+    );
   }
 }
 

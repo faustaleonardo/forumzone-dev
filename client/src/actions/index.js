@@ -5,6 +5,7 @@ export const fetchUser = () => async dispatch => {
   try {
     const user = await axios.get('/api/v1/users/current');
 
+    console.log(user);
     dispatch({
       type: FETCH_USER,
       payload: user
