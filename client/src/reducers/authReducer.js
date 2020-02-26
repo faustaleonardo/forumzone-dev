@@ -1,8 +1,7 @@
 const authReducer = (state = {}, action) => {
   switch (action.type) {
     case 'fetch_user':
-      console.log(action.payload);
-      break;
+      return action.payload;
     default:
       return state;
   }

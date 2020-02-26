@@ -6,6 +6,22 @@ const catchAsync = require('../utils/catchAsync');
 const AppError = require('../utils/appError');
 const sendEmail = require('../utils/sendEmail');
 
+const getToken = req => {
+  if (req.headers && req.headers.authorization) {
+    return req.headers.authorization.split(' ')[1];
+  }
+
+  if (req.cookies.jwt) {
+    return req.cookies.jwt;
+  }
+  return null;
+};
+
+const getAuthUser = async token => {
+  const { id } = await promisify(jwt.verify)(token, process.env.JWT_SECRET_KEY);
+  return await User.findById(id);
+};
+
 const createToken = id => {
   return jwt.sign({ id }, process.env.JWT_SECRET_KEY, {
     expiresIn: process.env.JWT_EXPIRES_IN
@@ -166,28 +182,32 @@ exports.updatePassword = catchAsync(async (req, res, next) => {
   sendToken(user, req, res, 200);
 });
 
-exports.protect = catchAsync(async (req, res, next) => {
-  let token;
-
-  if (req.headers && req.headers.authorization) {
-    token = req.headers.authorization.split(' ')[1];
-  } else if (req.cookies.jwt) {
-    token = req.cookies.jwt;
+exports.getCurrentUser = catchAsync(async (req, res, next) => {
+  const token = getToken(req);
+  if (!token) {
+    return res.status(204).json({ status: 'success', user: null });
   }
 
+  const user = await getAuthUser(token);
+  if (!user) {
+    return res.status(204).json({ status: 'success', user: null });
+  }
+
+  return res.status(200).json({ status: 'success', user });
+});
+
+exports.protect = catchAsync(async (req, res, next) => {
+  const token = getToken(req);
   if (!token)
     return next(new AppError('You are not logged in. Please log in', 401));
 
-  const { id } = await promisify(jwt.verify)(token, process.env.JWT_SECRET_KEY);
-  const user = await User.findById(id);
-
+  const user = await getAuthUser(token);
   if (!user)
     return next(
       new AppError('The user belonging to this token no longer exists', 401)
     );
 
   req.user = user;
-
   next();
 });
 

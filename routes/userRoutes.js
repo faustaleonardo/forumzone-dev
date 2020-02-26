@@ -9,6 +9,7 @@ const {
   forgetPassword,
   resetPassword,
   updatePassword,
+  getCurrentUser,
   protect
 } = require('../controllers/authController');
 const {
@@ -29,12 +30,7 @@ router.use('/:userId/comments', commentRouter);
 router.use('/:userId/bookmarks', bookmarkRouter);
 router.use('/:userId/votes', voteRouter);
 
-router.get('/current', (req, res, next) => {
-  res.json({
-    status: 'success',
-    user: req.user
-  })
-})
+router.get('/current', getCurrentUser);
 router.get('/me', protect, getMe, getUser);
 router.patch('/updatePassword', protect, updatePassword);
 router.patch('/updateMe', protect, updateMe);
