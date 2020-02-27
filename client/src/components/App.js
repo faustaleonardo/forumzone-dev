@@ -4,8 +4,8 @@ import { connect } from 'react-redux';
 import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
+import Signup from './Signup';
 
-const Signup = () => <div>Signin page</div>;
 const Login = () => <div>Login page</div>;
 
 class App extends Component {
