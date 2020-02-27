@@ -5,8 +5,7 @@ import * as actions from '../actions';
 import Header from './Header';
 import Landing from './Landing';
 import Signup from './Signup';
-
-const Login = () => <div>Login page</div>;
+import Login from './Login';
 
 class App extends Component {
   componentDidMount() {
