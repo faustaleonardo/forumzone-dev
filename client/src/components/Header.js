@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
+
 class Header extends Component {
   render() {
     return (
@@ -6,15 +8,15 @@ class Header extends Component {
         <div className="nav-wrapper">
           <div className="row">
             <div className="col s12">
-              <a href="/" className="brand-logo">
+              <Link to="/" className="brand-logo">
                 <span className="text-uppercase app-name">Forumzone</span>
-              </a>
+              </Link>
               <ul id="nav-mobile" className="right hide-on-med-and-down">
                 <li>
-                  <a href="/signup">Signup</a>
+                  <Link to="/signup">Signup</Link>
                 </li>
                 <li>
-                  <a href="/login">Login</a>
+                  <Link to="/login">Login</Link>
                 </li>
               </ul>
             </div>

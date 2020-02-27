@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import Searchbar from './Searchbar';
 import Sidebar from './Sidebar';
 import QuestionCard from './QuestionCard';
@@ -45,16 +45,16 @@ class Landing extends Component {
         <div className="col offset-s3 s9 mt-1">
           <ul className="pagination center">
             <li className="disabled">
-              <a href="/">
+              <Link to="/">
                 <i className="material-icons">chevron_left</i>
                 <div className="side-content">Previous</div>
-              </a>
+              </Link>
             </li>
             <li className="waves-effect">
-              <a href="/">
+              <Link to="/">
                 <div className="side-content">Next</div>
                 <i className="material-icons">chevron_right</i>
-              </a>
+              </Link>
             </li>
           </ul>
         </div>

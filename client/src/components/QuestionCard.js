@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const questionCard = () => {
   return (
@@ -9,9 +10,9 @@ const questionCard = () => {
             <span class="card-title">How to fix this problem ?</span>
             <p className="text-grey-color left">
               posted by{' '}
-              <a href="/" className="text-uppercase">
+              <Link to="/" className="text-uppercase">
                 John Doe
-              </a>{' '}
+              </Link>{' '}
               - 3 minutes ago
             </p>
             <div className="text-grey-color right">
@@ -22,9 +23,9 @@ const questionCard = () => {
             </div>
           </div>
           <div class="card-action">
-            <a href="/" id="link-to-question">
+            <Link to="/" id="link-to-question">
               View
-            </a>
+            </Link>
           </div>
         </div>
       </div>
