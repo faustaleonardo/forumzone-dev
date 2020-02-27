@@ -1,5 +1,8 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { Component } from 'react';
+import Searchbar from './Searchbar';
+import Sidebar from './Sidebar';
+import QuestionCard from './QuestionCard';
 
 class Landing extends Component {
   render() {
@@ -27,35 +30,34 @@ class Landing extends Component {
           </select>
         </div>
         <div className="col s12 mt-1">
-          <nav className="grey lighten-3">
-            <div className="nav-wrapper">
-              <form>
-                <div className="input-field">
-                  <input
-                    id="search"
-                    className="bg-grey-color"
-                    type="search"
-                    required
-                  />
-                  <label className="label-icon" for="search">
-                    <i className="material-icons">
-                      <span className="text-grey-color">search</span>
-                    </i>
-                  </label>
-                  <i className="material-icons">close</i>
-                </div>
-              </form>
-            </div>
-          </nav>
+          <Searchbar />
         </div>
         <div className="col s3 mt-1">
-          <ul>
-            <li>
-              <a href="/myquestions">My Questions</a>
+          <Sidebar />
+        </div>
+        <div className="col s9 mt-1">
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+          <QuestionCard />
+        </div>
+        <div className="col offset-s3 s9 mt-1">
+          <ul className="pagination center">
+            <li className="disabled">
+              <a href="/">
+                <i className="material-icons">chevron_left</i>
+                <div className="side-content">Previous</div>
+              </a>
+            </li>
+            <li className="waves-effect">
+              <a href="/">
+                <div className="side-content">Next</div>
+                <i className="material-icons">chevron_right</i>
+              </a>
             </li>
           </ul>
         </div>
-        <div className="col s9 mt-1"></div>
       </div>
     );
   }
