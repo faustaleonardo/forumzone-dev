@@ -8,16 +8,20 @@
   text-transform: uppercase;
 }
 
+.mt-1 {
+  margin-top: 1rem;
+}
+
 .mt-2 {
   margin-top: 2rem;
 }
 
-.mr-12 {
-  margin-right: 12px;
+.mt-3 {
+  margin-top: 3rem;
 }
 
-.mt-1 {
-  margin-top: 1rem;
+.mr-12 {
+  margin-right: 12px;
 }
 
 .pl-5 {
@@ -90,4 +94,43 @@
   display: block;
   width: 100%;
   margin-top: 20px;
+}
+
+.user-profile {
+  text-align: center;
+  padding: 20px;
+}
+
+.user-photo {
+  border-radius: 50%;
+  width: 9%;
+  display: block;
+  margin: 0 auto;
+}
+
+.user-card {
+  display: inline-block;
+  border: 1px solid var(--bg-grey-color);
+  padding: 10px;
+  border-radius: 10px;
+  background-color: var(--bg-grey-color);
+}
+
+.user-name {
+  font-size: 1.5rem;
+  text-transform: uppercase;
+}
+
+.activity {
+  margin-top: 50px;
+  border-bottom: 1px solid var(--secondary-pink-color);
+}
+
+.activity-title {
+  margin-bottom: 0;
+}
+
+.activity-time {
+  margin-top: 5px;
+  color: var(--text-grey-color);
 }

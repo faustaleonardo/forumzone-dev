@@ -2,7 +2,7 @@ import React from 'react';
 
 const Signup = () => {
   return (
-    <div className="row">
+    <div className="row mt-2">
       <div className="col s12 m6 offset-m3">
         <div className="card">
           <div className="card-content">

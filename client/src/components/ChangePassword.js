@@ -1,47 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import SidebarUser from './partials/SidebarUser';
 
 const ChangePassword = () => {
   return (
-    <div className="row">
+    <div className="row mt-2">
       <div className="col s3">
-        <ul className="text-align-center">
-          <li>
-            <Link to="/" className="side-link">
-              <span className="text-uppercase">What's new</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="side-link">
-              <span className="text-uppercase">Profile</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="side-link">
-              <span className="text-uppercase">Bookmarks</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="side-link">
-              <span className="text-uppercase">Questions</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/" className="side-link">
-              <span className="text-uppercase">Solved Questions</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/settings" className="side-link">
-              <span className="text-uppercase">Settings</span>
-            </Link>
-          </li>
-          <li>
-            <Link to="/password/change" className="side-link side-link-active">
-              <span className="text-uppercase">Change Password</span>
-            </Link>
-          </li>
-        </ul>
+        <SidebarUser />
       </div>
       <div className="col s9">
         <div className="card">

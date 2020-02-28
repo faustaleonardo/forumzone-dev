@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
-import Searchbar from './Searchbar';
-import Sidebar from './Sidebar';
-import QuestionCard from './QuestionCard';
+import Searchbar from './partials/Searchbar';
+import Sidebar from './partials/Sidebar';
+import QuestionCard from './partials/QuestionCard';
+import Pagination from './partials/Pagination';
 
 class Landing extends Component {
   render() {
     return (
-      <div className="row">
+      <div className="row mt-2">
         <div className="col s2">
           <a
             href="questions/new"
@@ -36,27 +36,15 @@ class Landing extends Component {
           <Sidebar />
         </div>
         <div className="col s9 mt-1">
+          <h3 className="text-grey-color">What's new ?</h3>
           <QuestionCard />
           <QuestionCard />
           <QuestionCard />
           <QuestionCard />
           <QuestionCard />
         </div>
-        <div className="col offset-s3 s9 mt-1">
-          <ul className="pagination center">
-            <li className="disabled">
-              <Link to="/">
-                <i className="material-icons">chevron_left</i>
-                <div className="side-content">Previous</div>
-              </Link>
-            </li>
-            <li className="waves-effect">
-              <Link to="/">
-                <div className="side-content">Next</div>
-                <i className="material-icons">chevron_right</i>
-              </Link>
-            </li>
-          </ul>
+        <div className="col offset-s3 s9">
+          <Pagination />
         </div>
       </div>
     );
