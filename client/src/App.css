@@ -20,6 +20,9 @@
   margin-top: 3rem;
 }
 
+.mb-2 {
+  margin-bottom: 2rem;
+}
 .mr-12 {
   margin-right: 12px;
 }
@@ -133,4 +136,41 @@
 .activity-time {
   margin-top: 5px;
   color: var(--text-grey-color);
+}
+
+.user-question-photo {
+  display: inline-block;
+  border-radius: 50%;
+  width: 60px;
+  vertical-align: top;
+}
+
+.user-details {
+  display: inline-block;
+  padding-left: 10px;
+}
+
+.user-question-title {
+  padding-top: 10px;
+  background-color: var(--bg-grey-color);
+  color: var(--text-grey-color);
+  font-size: 1.2rem;
+}
+
+.user-question-content {
+  margin-bottom: 60px;
+  border-bottom: 1px solid var(--secondary-pink-color);
+  padding-bottom: 30px;
+}
+
+.user-comment {
+  margin-bottom: 40px;
+}
+
+.user-comment-content {
+  margin-top: 5px;
+}
+
+.user-comment-setting {
+  cursor: pointer;
 }

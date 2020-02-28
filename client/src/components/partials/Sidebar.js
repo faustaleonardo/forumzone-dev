@@ -53,7 +53,7 @@ const Sidebar = () => {
         </Link>
       </li>
       <li>
-        <Link to="/" className="side-link">
+        <Link to="/top-20-solvers" className="side-link">
           <i className="material-icons vert-align-mid">check</i>
           <div className="side-link-content">Top 20 Solvers</div>
         </Link>

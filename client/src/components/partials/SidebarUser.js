@@ -10,7 +10,7 @@ const SidebarUser = () => {
         </Link>
       </li>
       <li>
-        <Link to="/" className="side-link">
+        <Link to="/profile" className="side-link">
           <span className="text-uppercase">Profile</span>
         </Link>
       </li>

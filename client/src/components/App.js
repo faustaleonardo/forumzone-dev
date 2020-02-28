@@ -10,8 +10,10 @@ import Settings from './Settings';
 import ChangePassword from './ChangePassword';
 import QuestionsSolved from './QuestionsSolved';
 import Questions from './Questions';
+import Question from './Question';
 import Bookmarks from './Bookmarks';
 import Profile from './Profile';
+import Top20Solvers from './Top20Solvers';
 
 class App extends Component {
   componentDidMount() {
@@ -29,9 +31,11 @@ class App extends Component {
             <Route path="/signup" component={Signup} />
             <Route path="/settings" component={Settings} />
             <Route path="/password/change" component={ChangePassword} />
+            <Route exact path="/questions/1" component={Question} />
             <Route exact path="/questions/me" component={Questions} />
             <Route path="/questions/solved/me" component={QuestionsSolved} />
             <Route path="/bookmarks" component={Bookmarks} />
+            <Route path="/top-20-solvers" component={Top20Solvers} />
           </div>
           <Route path="/profile" component={Profile} />
         </BrowserRouter>
