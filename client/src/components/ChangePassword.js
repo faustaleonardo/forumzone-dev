@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Profile = () => {
+const ChangePassword = () => {
   return (
     <div className="row">
       <div className="col s3">
@@ -32,12 +32,12 @@ const Profile = () => {
             </Link>
           </li>
           <li>
-            <Link to="/settings" className="side-link side-link-active">
+            <Link to="/settings" className="side-link">
               <span className="text-uppercase">Settings</span>
             </Link>
           </li>
           <li>
-            <Link to="/password/change" className="side-link">
+            <Link to="/password/change" className="side-link side-link-active">
               <span className="text-uppercase">Change Password</span>
             </Link>
           </li>
@@ -46,45 +46,22 @@ const Profile = () => {
       <div className="col s9">
         <div className="card">
           <div className="card-content">
-            <span className="card-title">Your Profile</span>
+            <span className="card-title">Change Your Password</span>
             <form>
               <div>
-                <label htmlFor="first_name">First Name</label>
-                <input name="first_name" type="text" />
+                <label htmlFor="password">Password</label>
+                <input name="password" type="password" />
               </div>
               <div>
-                <label htmlFor="email">Email</label>
-                <input name="email" type="email" />
-              </div>
-              <div>
-                <label htmlFor="photo">Photo</label>
-                <input name="photo" type="text" />
-              </div>
-              <div>
-                <label htmlFor="jobs">Jobs</label>
-                <input name="jobs" type="text" />
-              </div>
-              <div>
-                <label htmlFor="age">Age</label>
-                <input name="age" type="text" />
-              </div>
-              <div>
-                <label htmlFor="accessibility">Accessibility</label>
-                <div className="switch mt-1">
-                  <label>
-                    Off
-                    <input type="checkbox" />
-                    <span className="lever"></span>
-                    On
-                  </label>
-                </div>
+                <label htmlFor="password">Password Confirmation</label>
+                <input name="passwordConfirmation" type="password" />
               </div>
               <button
                 className="btn waves-effect waves-light pink accent-1 button-action"
                 type="submit"
                 name="action"
               >
-                Update Profile
+                Change Password
               </button>
             </form>
           </div>
@@ -94,4 +71,4 @@ const Profile = () => {
   );
 };
 
-export default Profile;
+export default ChangePassword;

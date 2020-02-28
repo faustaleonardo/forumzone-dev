@@ -7,6 +7,7 @@ import Landing from './Landing';
 import Signup from './Signup';
 import Login from './Login';
 import Settings from './Settings';
+import ChangePassword from './ChangePassword';
 
 class App extends Component {
   componentDidMount() {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
             <Route path="/settings" component={Settings} />
+            <Route path="/password/change" component={ChangePassword} />
           </div>
         </BrowserRouter>
       </div>

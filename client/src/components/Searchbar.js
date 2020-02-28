@@ -12,7 +12,7 @@ const Searchbar = () => {
               type="search"
               required
             />
-            <label className="label-icon" for="search">
+            <label className="label-icon" htmlFor="search">
               <i className="material-icons">
                 <span className="text-grey-color">search</span>
               </i>

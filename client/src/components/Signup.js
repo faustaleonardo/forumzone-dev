@@ -9,19 +9,19 @@ const Signup = () => {
             <span className="card-title">Join us!</span>
             <form>
               <div>
-                <label for="name">Name</label>
+                <label htmlFor="name">Name</label>
                 <input name="name" type="text" />
               </div>
               <div>
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input name="email" type="email" />
               </div>
               <div>
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <input name="password" type="password" />
               </div>
               <div>
-                <label for="password">Password Confirmation</label>
+                <label htmlFor="password">Password Confirmation</label>
                 <input name="passwordConfirmation" type="password" />
               </div>
               <button

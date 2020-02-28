@@ -9,11 +9,11 @@ const Login = () => {
             <span className="card-title">Welcome back!</span>
             <form>
               <div>
-                <label for="email">Email</label>
+                <label htmlFor="email">Email</label>
                 <input name="email" type="email" />
               </div>
               <div>
-                <label for="password">Password</label>
+                <label htmlFor="password">Password</label>
                 <input name="password" type="password" />
               </div>
               <button
