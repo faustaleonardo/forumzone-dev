@@ -6,6 +6,7 @@ import Header from './Header';
 import Landing from './Landing';
 import Signup from './Signup';
 import Login from './Login';
+import Settings from './Settings';
 
 class App extends Component {
   componentDidMount() {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/" component={Landing} />
             <Route path="/login" component={Login} />
             <Route path="/signup" component={Signup} />
+            <Route path="/settings" component={Settings} />
           </div>
         </BrowserRouter>
       </div>

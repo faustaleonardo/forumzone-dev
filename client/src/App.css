@@ -36,6 +36,10 @@
   vertical-align: middle;
 }
 
+.text-align-center {
+  text-align: center;
+}
+
 #link-to-question {
   color: var(--secondary-pink-color);
 }
@@ -64,6 +68,10 @@
 }
 
 .side-link:hover {
+  background-color: var(--bg-grey-color);
+  color: var(--secondary-pink-color);
+}
+.side-link-active {
   background-color: var(--bg-grey-color);
   color: var(--secondary-pink-color);
 }

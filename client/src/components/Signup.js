@@ -9,12 +9,8 @@ const Signup = () => {
             <span className="card-title">Join us!</span>
             <form>
               <div>
-                <label for="first_name">First Name</label>{' '}
-                <input name="first_name" type="text" />
-              </div>
-              <div>
-                <label for="last_name">Last Name</label>
-                <input name="last_name" type="text" />
+                <label for="name">Name</label>
+                <input name="name" type="text" />
               </div>
               <div>
                 <label for="email">Email</label>
