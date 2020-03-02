@@ -55,7 +55,7 @@ const Question = () => {
           </div>
           <div className="text-grey-color right">
             <i className="material-icons">remove_red_eye</i>
-            <div className="side-content pl-5 mr-12">12</div>
+            <div className="side-content pl-5 mr-1">12</div>
             <i className="material-icons">comment</i>
             <div className="side-content pl-5">20</div>
           </div>
