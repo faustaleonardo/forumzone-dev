@@ -89,14 +89,14 @@ exports.login = catchAsync(async (req, res, next) => {
   sendToken(user, req, res, 200);
 });
 
-exports.logout = catchAsync(async (req, res, next) => {
-  res.cookie('jwt', 'loggedout', {
+exports.logout = (req, res, next) => {
+  res.cookie('jwt', '', {
     expires: new Date(Date.now() + 10 * 1000),
     httpOnly: true
   });
 
   res.status(200).json({ status: 'success' });
-});
+};
 
 exports.forgetPassword = catchAsync(async (req, res, next) => {
   const { email } = req.body;

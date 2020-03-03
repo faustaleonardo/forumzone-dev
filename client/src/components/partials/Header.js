@@ -1,7 +1,43 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import * as actions from './../../actions';
 
 class Header extends Component {
+  renderContent() {
+    switch (this.props.auth) {
+      case null:
+        return;
+      case false:
+        return (
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <li>
+              <Link to="/signup">Signup</Link>
+            </li>
+            <li>
+              <Link to="/login">Login</Link>
+            </li>
+          </ul>
+        );
+      default:
+        return (
+          <ul id="nav-mobile" className="right hide-on-med-and-down">
+            <li>
+              <Link to="/profile">Profile</Link>
+            </li>
+            <li>
+              <button
+                className="waves-effect waves-light btn grey ligthen-1"
+                onClick={this.props.logout}
+              >
+                Logout
+              </button>
+            </li>
+          </ul>
+        );
+    }
+  }
+
   render() {
     return (
       <nav className="pink accent-2">
@@ -11,14 +47,7 @@ class Header extends Component {
               <Link to="/" className="brand-logo">
                 <span className="text-uppercase app-name">Forumzone</span>
               </Link>
-              <ul id="nav-mobile" className="right hide-on-med-and-down">
-                <li>
-                  <Link to="/signup">Signup</Link>
-                </li>
-                <li>
-                  <Link to="/login">Login</Link>
-                </li>
-              </ul>
+              {this.renderContent()}
             </div>
           </div>
         </div>
@@ -27,4 +56,8 @@ class Header extends Component {
   }
 }
 
-export default Header;
+const mapStateToProps = ({ auth }) => {
+  return { auth };
+};
+
+export default connect(mapStateToProps, actions)(Header);
