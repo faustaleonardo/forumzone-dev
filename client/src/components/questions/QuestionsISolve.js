@@ -1,9 +1,13 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import QuestionCard from '../partials/QuestionCard';
 import SidebarUser from '../partials/SidebarUser';
 import Pagination from '../partials/Pagination';
 
-const QuestionsISolve = () => {
+const QuestionsISolve = props => {
+  if (!props.auth) {
+    return <Redirect to="/login" />;
+  }
   return (
     <div className="row mt-2">
       <div className="col s12">

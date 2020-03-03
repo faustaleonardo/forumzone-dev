@@ -1,7 +1,12 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import SidebarUser from './partials/SidebarUser';
 
-const ChangePassword = () => {
+const ChangePassword = props => {
+  if (!props.auth) {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <div className="row mt-2">
       <div className="col s3">

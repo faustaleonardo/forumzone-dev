@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import Searchbar from '../partials/Searchbar';
 import Sidebar from '../partials/Sidebar';
 import Pagination from '../partials/Pagination';
 import Comment from '../partials/Comment';
 
-const Question = () => {
+const Question = props => {
+  if (!props.auth) {
+    return <Redirect to="/login" />;
+  }
+
   return (
     <div className="row mt-2">
       <div className="col s2">

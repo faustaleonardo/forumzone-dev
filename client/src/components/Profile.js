@@ -1,8 +1,12 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 import Activity from './partials/Activity';
 import Pagination from './partials/Pagination';
 
-const Profile = () => {
+const Profile = ({ auth }) => {
+  if (!auth) {
+    return <Redirect to="/login" />;
+  }
   return (
     <div>
       <div className="user-profile grey lighten-3">
