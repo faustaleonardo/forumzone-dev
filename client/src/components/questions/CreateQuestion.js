@@ -1,32 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Searchbar from './partials/Searchbar';
-import Sidebar from './partials/Sidebar';
+import Sidebar from '../partials/Sidebar';
 
 const Question = () => {
   return (
     <div className="row mt-2">
-      <div className="col s2">
-        <a
-          href="questions/new"
-          className="waves-effect waves-light pink accent-1 btn-small btn-new-discussion"
-        >
-          <i className="material-icons right">create</i>New
-        </a>
-      </div>
-      <div className="col s10">
-        <select className="filter-dropbox right">
-          <option value="latest">Latest</option>
-          <option value="popular-this-week">Popular This Week</option>
-          <option value="popular-this-time">Popular This Time</option>
-          <option value="solved">Solved</option>
-          <option value="unsolved">Unsolved</option>
-          <option value="no-replied">No Replied Yet</option>
-          <option value="Leaderboard">Leaderboard</option>
-        </select>
-      </div>
-      <div className="col s12 mt-1">
-        <Searchbar />
+      <div className="col s12">
+        <h3 className="text-grey-color center">Let's discuss!</h3>
       </div>
       <div className="col s3 mt-1">
         <Sidebar />
@@ -57,14 +37,14 @@ const Question = () => {
           <div className="col s10">
             <div className="right">
               <button
-                class="btn waves-effect waves-light grey lighten-5 mr-1"
+                className="btn waves-effect waves-light grey lighten-5 mr-1"
                 type="submit"
                 name="btn-cancel"
               >
                 <span className="text-grey-color">Cancel</span>
               </button>
               <button
-                class="btn waves-effect waves-light pink accent-1"
+                className="btn waves-effect waves-light pink accent-1"
                 type="submit"
                 name="btn-post"
               >

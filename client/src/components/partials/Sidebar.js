@@ -5,7 +5,7 @@ const Sidebar = () => {
   return (
     <ul>
       <li>
-        <Link to="/" className="side-link">
+        <Link to="/questions/me" className="side-link">
           <i className="material-icons vert-align-mid">question_answer</i>
           <div className="side-link-content">My Questions</div>
         </Link>

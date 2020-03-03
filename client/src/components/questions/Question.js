@@ -1,20 +1,20 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import Searchbar from './partials/Searchbar';
-import Sidebar from './partials/Sidebar';
-import Pagination from './partials/Pagination';
-import Comment from './partials/Comment';
+import Searchbar from '../partials/Searchbar';
+import Sidebar from '../partials/Sidebar';
+import Pagination from '../partials/Pagination';
+import Comment from '../partials/Comment';
 
 const Question = () => {
   return (
     <div className="row mt-2">
       <div className="col s2">
-        <a
-          href="questions/new"
+        <Link
+          to="/questions/new"
           className="waves-effect waves-light pink accent-1 btn-small btn-new-discussion"
         >
           <i className="material-icons right">create</i>New
-        </a>
+        </Link>
       </div>
       <div className="col s10">
         <select className="filter-dropbox right">

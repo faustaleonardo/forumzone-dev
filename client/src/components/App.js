@@ -8,10 +8,10 @@ import Signup from './Signup';
 import Login from './Login';
 import Settings from './Settings';
 import ChangePassword from './ChangePassword';
-import QuestionsSolved from './QuestionsSolved';
-import Questions from './Questions';
-import Question from './Question';
-import CreateQuestion from './CreateQuestion';
+import QuestionsISolve from './questions/QuestionsISolve';
+import MyQuestions from './questions/MyQuestions';
+import Question from './questions/Question';
+import CreateQuestion from './questions/CreateQuestion';
 import Bookmarks from './Bookmarks';
 import Profile from './Profile';
 import Top20Solvers from './Top20Solvers';
@@ -33,11 +33,11 @@ class App extends Component {
             <Route path="/settings" component={Settings} />
             <Route path="/password/change" component={ChangePassword} />
             <Route exact path="/questions/new" component={CreateQuestion} />
-            <Route exact path="/questions/me" component={Questions} />
+            <Route exact path="/questions/me" component={MyQuestions} />
             <Route
               exact
               path="/questions/solved/me"
-              component={QuestionsSolved}
+              component={QuestionsISolve}
             />
             <Route exact path="/questions/1" component={Question} />
             <Route path="/bookmarks" component={Bookmarks} />

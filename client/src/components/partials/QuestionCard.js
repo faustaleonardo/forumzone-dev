@@ -23,7 +23,7 @@ const QuestionCard = () => {
             </div>
           </div>
           <div className="card-action">
-            <Link to="/" id="link-to-question">
+            <Link to="/questions/1" id="link-to-question">
               View
             </Link>
           </div>

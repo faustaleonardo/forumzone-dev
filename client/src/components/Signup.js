@@ -25,7 +25,7 @@ const Signup = () => {
                 <input name="passwordConfirmation" type="password" />
               </div>
               <button
-                class="btn waves-effect waves-light pink accent-1 button-action"
+                className="btn waves-effect waves-light pink accent-1 button-action"
                 type="submit"
                 name="action"
               >
