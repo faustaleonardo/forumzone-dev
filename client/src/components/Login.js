@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import * as actions from './../actions';
 import { connect } from 'react-redux';
+import showAlert from './../utils/showAlert';
 
 class Login extends Component {
   state = {
@@ -11,12 +12,12 @@ class Login extends Component {
   handleSubmit = async event => {
     event.preventDefault();
     if (!this.state.email || !this.state.password) {
-      alert('Email and Password must be provided.');
+      showAlert('error', 'Oops...', 'Email and password must be filled!');
       return;
     }
     await this.props.login(this.state);
     if (this.props.auth === false) {
-      alert('Your email or password is incorrect');
+      showAlert('error', 'Oops...', 'Your email or password is wrong!');
       return;
     }
 
