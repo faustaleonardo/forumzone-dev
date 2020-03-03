@@ -4,6 +4,8 @@ const authReducer = (state = {}, action) => {
   switch (action.type) {
     case 'fetch_user':
       return payload || false;
+    case 'signup':
+      return payload;
     case 'login':
       return payload || false;
     case 'logout':

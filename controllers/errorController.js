@@ -10,7 +10,7 @@ const handleValidationErrorDB = error => {
 
 const handleDuplicateKeyErrorDB = error => {
   const duplicateKey = error.message.match(/(["'])(?:(?=(\\?))\2.)*?\1/)[0];
-  const message = `Duplicate value: ${duplicateKey}. Please use another!`;
+  const message = `${duplicateKey} has been used. Please use another!`;
   return new AppError(message, '400');
 };
 

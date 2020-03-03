@@ -8,6 +8,7 @@
     "server": "nodemon server.js",
     "server:prod": "NODE_ENV=production nodemon server.js",
     "client": "npm run start --prefix client",
+    "prod": "NODE_ENV=production concurrently \"npm run server\" \"npm run client\"",
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "debug": "node --inspect server.js",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"

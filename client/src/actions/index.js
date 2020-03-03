@@ -1,5 +1,13 @@
 import axios from 'axios';
-import { FETCH_USER, FETCH_QUESTIONS, LOGIN, LOGOUT } from './type';
+import {
+  FETCH_USER,
+  FETCH_QUESTIONS,
+  LOGIN,
+  SIGNUP,
+  LOGOUT,
+  GET_ERROR,
+  CLEAR_ERROR
+} from './type';
 
 export const fetchUser = () => async dispatch => {
   try {
@@ -15,21 +23,30 @@ export const fetchUser = () => async dispatch => {
   }
 };
 
-export const login = credentials => async dispatch => {
+const postUser = (url, data, type) => async dispatch => {
   try {
     let user = null;
 
-    const response = await axios.post('/api/v1/users/login', credentials);
+    const response = await axios.post(url, data);
     if (response.data.status === 'success') user = response.data.data.user;
 
     dispatch({
-      type: LOGIN,
+      type,
       payload: user
     });
   } catch (err) {
-    console.log(err);
+    dispatch({
+      type: GET_ERROR,
+      payload: err.response.data.message
+    });
   }
 };
+
+export const signup = details =>
+  postUser('/api/v1/users/signup', details, SIGNUP);
+
+export const login = credentials =>
+  postUser('api/v1/users/login', credentials, LOGIN);
 
 export const logout = () => async dispatch => {
   try {
@@ -54,4 +71,8 @@ export const fetchQuestions = () => async dispatch => {
   } catch (err) {
     console.log(err);
   }
+};
+
+export const clearError = () => {
+  return { type: CLEAR_ERROR, payload: null };
 };

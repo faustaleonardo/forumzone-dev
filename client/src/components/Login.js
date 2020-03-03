@@ -15,6 +15,7 @@ class Login extends Component {
       showAlert('error', 'Oops...', 'Email and password must be filled!');
       return;
     }
+
     await this.props.login(this.state);
     if (this.props.auth === false) {
       showAlert('error', 'Oops...', 'Your email or password is wrong!');
