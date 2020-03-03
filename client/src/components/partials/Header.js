@@ -22,8 +22,8 @@ class Header extends Component {
       default:
         return (
           <ul id="nav-mobile" className="right hide-on-med-and-down">
-            <li>
-              <Link to="/profile">Profile</Link>
+            <li className="mr-1">
+              <Link to="/settings">Settings</Link>
             </li>
             <li>
               <button

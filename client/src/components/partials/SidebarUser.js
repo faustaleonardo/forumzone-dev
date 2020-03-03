@@ -5,11 +5,6 @@ const SidebarUser = () => {
   return (
     <ul className="text-align-center">
       <li>
-        <Link to="/" className="side-link">
-          <span className="text-uppercase">What's new</span>
-        </Link>
-      </li>
-      <li>
         <Link to="/profile" className="side-link">
           <span className="text-uppercase">Profile</span>
         </Link>

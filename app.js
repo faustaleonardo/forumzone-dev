@@ -1,4 +1,5 @@
 const express = require('express');
+const path = require('path');
 const morgan = require('morgan');
 const dotenv = require('dotenv');
 const rateLimit = require('express-rate-limit');
@@ -64,12 +65,20 @@ app.use('/api/v1/comments', commentRouter);
 app.use('/api/v1/bookmarks', bookmarkRouter);
 app.use('/api/v1/votes', voteRouter);
 
-app.use('*', (req, res, next) => {
-  res.status(404).json({
-    status: 'fail',
-    message: 'Route does not exist.'
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
+
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
-});
+}
+
+// app.use('*', (req, res, next) => {
+//   res.status(404).json({
+//     status: 'fail',
+//     message: 'Route does not exist.'
+//   });
+// });
 // global error controller
 app.use(errorController);
 

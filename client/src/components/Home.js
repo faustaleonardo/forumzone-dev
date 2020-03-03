@@ -1,21 +1,29 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 import Sidebar from './partials/Sidebar';
 import QuestionCard from './partials/QuestionCard';
 import Pagination from './partials/Pagination';
 
-class Landing extends Component {
+class Home extends Component {
+  renderContent() {
+    if (this.props.auth) {
+      return (
+        <Link
+          to="questions/new"
+          className="waves-effect waves-light pink accent-1 btn-small btn-new-discussion"
+        >
+          <i className="material-icons right">create</i>New
+        </Link>
+      );
+    }
+  }
+
   render() {
     return (
       <div className="row mt-2">
-        <div className="col s2">
-          <Link
-            to="questions/new"
-            className="waves-effect waves-light pink accent-1 btn-small btn-new-discussion"
-          >
-            <i className="material-icons right">create</i>New
-          </Link>
-        </div>
+        <div className="col s2">{this.renderContent()}</div>
         <div className="col s10">
           <select className="filter-dropbox right">
             <option value="latest">Latest</option>
@@ -31,7 +39,7 @@ class Landing extends Component {
           <Sidebar />
         </div>
         <div className="col s9 mt-1">
-          <h3 className="text-grey-color">What's new ?</h3>
+          <h3 className="text-grey-color">Latest</h3>
           <QuestionCard />
           <QuestionCard />
           <QuestionCard />
@@ -46,4 +54,8 @@ class Landing extends Component {
   }
 }
 
-export default Landing;
+const mapStateToProps = ({ auth }) => {
+  return { auth };
+};
+
+export default connect(mapStateToProps)(Home);

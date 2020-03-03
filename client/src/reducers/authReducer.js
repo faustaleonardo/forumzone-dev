@@ -7,7 +7,7 @@ const authReducer = (state = {}, action) => {
     case 'login':
       return payload || false;
     case 'logout':
-      return false;
+      return payload;
     default:
       return state;
   }
