@@ -2,10 +2,22 @@ import React, { Component } from 'react';
 import { Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import SidebarUser from './partials/SidebarUser';
+import Preloader from './partials/preloader';
 
+// PENDING
 class Profile extends Component {
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
   render() {
-    if (!this.props.auth) {
+    if (
+      Object.keys(this.props.auth).length === 0 &&
+      this.props.auth !== false
+    ) {
+      return <Preloader />;
+    }
+    if (this.props.auth === false) {
       return <Redirect to="/login" />;
     }
     return (
@@ -19,12 +31,12 @@ class Profile extends Component {
               <span className="card-title">Your Profile</span>
               <form>
                 <div>
-                  <label htmlFor="first_name">First Name</label>
-                  <input name="first_name" type="text" />
+                  <label htmlFor="name">Name</label>
+                  <input name="name" type="text" />
                 </div>
                 <div>
                   <label htmlFor="email">Email</label>
-                  <input name="email" type="email" />
+                  <input name="name" type="email" />
                 </div>
                 <div>
                   <label htmlFor="photo">Photo</label>

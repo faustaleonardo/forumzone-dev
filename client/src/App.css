@@ -190,3 +190,13 @@
   width: 50px;
   vertical-align: top;
 }
+
+.preloader {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 5px;
+  width: 80%;
+}

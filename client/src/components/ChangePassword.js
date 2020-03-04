@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { Redirect } from 'react-router-dom';
 import SidebarUser from './partials/SidebarUser';
 
@@ -40,4 +41,8 @@ const ChangePassword = props => {
   );
 };
 
-export default ChangePassword;
+const mapStateToProps = ({ auth }) => {
+  return { auth };
+};
+
+export default connect(mapStateToProps)(ChangePassword);

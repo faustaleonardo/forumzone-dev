@@ -16,7 +16,7 @@ const SidebarUser = () => {
       </li>
       <li>
         <Link to="/questions/me" className="side-link">
-          <span className="text-uppercase">Questions</span>
+          <span className="text-uppercase">My Questions</span>
         </Link>
       </li>
       <li>
